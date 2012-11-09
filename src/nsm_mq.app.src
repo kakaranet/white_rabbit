@@ -1,0 +1,18 @@
+{application, nsm_mq,
+ [
+  {description, "Messages Queue"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { nsm_mq_app, []}},
+  % RabbitMQ broker settings
+  {env, [{amqp_host, "localhost"},
+	{amqp_port, 5672},
+	{amqp_user, "guest"},
+	{amqp_pass, "guest"},
+	{amqp_vhost,"/"}
+	]}
+ ]}.
